@@ -1,0 +1,146 @@
+@import '../../styles/constants.scss';
+@import '../../styles/mixins.scss';
+
+.header__top{
+  background-color: $color-black;
+  position: relative;
+  display:flex;
+  color:white;
+  height:120px;
+  @media screen and (max-width: 700px){
+    flex-direction:column;
+    height:230px;
+  }
+}
+
+.logo-box{
+  position: absolute;
+  margin-left: 50%;
+  transform: translate(-50%);
+  padding: 10px;
+  @media screen and (max-width: 700px){
+    position: absolute;
+    margin-left: 50%;
+    transform: translate(-50%)
+  }
+}
+
+.logo{
+  height:100px
+}
+
+.league-link{
+  &__container{
+    position: relative;
+    width: 300px;
+    height:100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    @media screen and (max-width: 700px){
+      position: absolute;
+      margin-top: 60px;
+      margin-left: 50%;
+      transform: translate(-50%)
+    }
+    &:hover{
+      .league-link__icon{
+        color: mix($color-yellow,#fff,80%);
+        text-shadow:  $color-yellow 0px 0px 3px, $color-yellow 0px 0px 6px;
+      }
+      .league-link__text{
+        color: $color-white;
+        text-shadow:  $color-white 0px 0px 3px, $color-white 0px 0px 6px;
+      }
+    }
+  }
+  &__icon{
+    position: absolute;
+    display: flex;
+    font-size:1.7rem;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: rgba($color-yellow, 0.5);
+    @include transitionConfig(.2s);
+  }
+  &__text{
+    color:$color-light-grey;
+    margin-top: 9%;
+    position: absolute;
+    font-size:20px;
+    padding: 10px;
+    letter-spacing:0.5px;
+    font-weight: 700;
+    text-transform:uppercase;
+    text-align: center;
+  }
+}
+
+.navbar{
+    list-style-type: none;
+    display:flex;
+    justify-content: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background:$color-black;
+    &__link{
+      flex:1;
+      display: inline-block;
+      position: relative;
+      color:$color-light-grey;
+      background: $color-black;
+      margin: 0px;
+      border: 0.5px solid $color-light-grey;
+      padding:20px 20px;
+      font-size:24px;
+      letter-spacing:0.5px;
+      font-weight: 700;
+      text-transform:uppercase;
+      @include transitionConfig(.2s);
+      &--active{
+      color:$color-white;
+      }
+      @media screen and (max-width: 700px){
+        width:50%;
+      }
+      &:hover{
+          color:$color-white;
+          font-weight: 600 ;
+        }
+        &__underline{
+          background-color: #4df;
+          height: 0.2rem;
+          width: 60%; 
+          position: absolute;
+          margin-top:5px;
+          margin-left: 50%;
+          transform: translate(-75%);
+          background:mix(#4df,#fff,10%);
+          box-shadow: #4df 2px 0px 15px 2px ;
+        }
+    }
+    &__left{
+      flex:1;
+      border: 0.5px solid $color-light-grey;
+      @media screen and (max-width: 700px){
+        display:none;
+      }
+    }
+    &__right{
+      flex:1;
+      border: 0.5px solid $color-light-grey;
+      @media screen and (max-width: 700px){
+        display:none;
+      }
+    }
+}
+
+.active{
+  color:$color-white;
+  font-weight: 600 ;
+}

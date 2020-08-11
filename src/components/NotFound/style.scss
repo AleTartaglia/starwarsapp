@@ -1,0 +1,25 @@
+@import '../../styles/constants.scss';
+
+.not-found {
+    color:$color-medium-grey;
+    &__four{
+        font-size: 24rem;
+        font-weight: lighter;
+        font-stretch: ultra-condensed;
+         @media screen and (max-width: 700px){
+            font-size: 12rem;
+        }
+    }
+    &__icon{
+        font-size: 20rem;
+        @media screen and (max-width: 700px){
+            font-size: 10rem;
+        }
+    }
+    &__text{
+        font-size: 4rem;
+        @media screen and (max-width: 700px){
+            font-size: 2rem;
+        }
+    }
+}

@@ -1,0 +1,88 @@
+@import '../../styles/constants.scss';
+@import '../../styles/mixins.scss';
+
+.single-header{
+    padding-top: 2rem;
+    margin: 0 auto;
+    width: 100%;
+    @media screen and (max-width: 700px){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    &__title{
+        display: inline-block;
+        color: white;
+        font-size: 3rem;
+        letter-spacing: 0.3rem;
+        text-transform: uppercase;
+    }
+    &__league-button{
+        display: inline-block;
+        text-decoration:none;
+        color: white; 
+        @include lightsaber($color-lightsaber-blue);
+        font-size: 3rem;
+        line-height: 1rem;
+        padding:0px;
+        margin: 40px 10px;
+        width: 0;
+        border-radius:0px 100px 100px 0px;
+        transition:width 0.2s ease,
+        padding 0.2s ease,
+        color 0.2s ease,
+        text-shadow 0.2s ease;
+        text-transform: uppercase;
+          span{
+            display:block;
+            padding: 1.5rem 0rem 1.5rem 1.5rem;
+            text-decoration:none;
+            text-align: left;
+            width:30rem;
+            color:inherit;
+        }
+        &.add {
+            @include lightsaber($color-lightsaber-green);
+          }
+    
+        &.remove {
+            @include lightsaber($color-lightsaber-red);
+        }
+        
+        &.disabled {
+            @include lightsaber($color-lightsaber-yellow);
+        }
+    
+        &.differentSpecies {
+            @include lightsaber($color-lightsaber-purple);
+        }
+    
+        &:hover {
+            width:30rem;
+            padding:0px 16px 0px 0px;
+            color:black;
+        }
+        
+    }
+}
+
+.attributes-container{
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    margin: 1rem;
+    @media screen and (max-width: 700px){
+        flex-direction: column;
+        align-items: center;
+      }
+}
+
+.main-attributes-container{
+    margin: 1rem;
+}
+
+.secondary-attributes-container{
+    display:flex;
+    flex-direction: column;
+    margin: 1rem;
+}

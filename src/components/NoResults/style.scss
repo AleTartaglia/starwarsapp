@@ -1,0 +1,15 @@
+@import '../../styles/constants.scss';
+
+.no-results {
+    color:$color-medium-grey;
+    &__icon{
+        font-size: 20rem;
+        color:#8f9942;
+    }
+    &__text{
+        font-size: 4rem;
+        @media screen and (max-width: 700px){
+            font-size: 2rem;
+        }
+    }
+}

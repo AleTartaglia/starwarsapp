@@ -1,0 +1,33 @@
+@import "../../../../styles/constants.scss";
+@import "../../../../styles/mixins.scss";
+
+.main-attributes{
+    display: flex;
+    background-color: $color-black;
+    padding: 2rem 2rem 2rem 2rem;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    width: 50rem;
+    height:100%;
+    border-radius: 1rem;
+    color: $color-white;
+    text-transform: capitalize;
+    font-size: 2.4rem;
+    line-height: 4rem;
+    &__list{
+        list-style-type: none;
+        text-align: center;
+    }
+    &__item{
+        &__name{
+            font-weight: 600;
+            color: $color-yellow;
+        }
+        &__link{
+            font-weight: 600;
+            color: $color-lightsaber-purple;
+            @include lighthover($color-lightsaber-purple)
+        }
+    }
+}

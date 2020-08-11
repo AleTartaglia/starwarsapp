@@ -1,0 +1,147 @@
+@import '../../styles/constants.scss';
+@import '../../styles/mixins.scss';
+
+.group-display{
+    margin-top: 2rem;
+}
+
+.grid-container{
+    margin-top:2rem;
+}
+
+.filter{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    &__input{
+        background-color: $color-dark-grey;
+        border: none;
+        height: 4rem;
+        width: 30rem;
+        border-radius: 1rem;
+        padding: 1.2rem 2rem 1rem 2rem;
+        color: $color-white;
+        font-size: 2rem;
+        font-weight: 550;
+        letter-spacing: 0.1rem;
+        &::placeholder{
+            color:$color-medium-grey;
+            font-size: 2rem;
+            font-weight: 550;
+            letter-spacing: 0.1rem;
+        }
+    }
+    &__submit{
+        background-color: transparent;
+        border: solid 0.2rem $color-yellow;
+        height:4rem;
+        width: 4rem;
+        border-radius: 1rem;
+        margin-left: 0.5rem;
+        i{
+            color: $color-yellow;
+            font-size: 2rem;
+        }
+        &:hover{
+            background-color: $color-yellow;;
+            border: solid $color-yellow; 
+            i{
+                color: $color-black;
+            }
+        }
+    }
+}
+
+    
+    .card{
+        display: inline-block;
+        border-radius: 10px;
+        background-color: $color-black;
+        padding: 30px 20px 30px 20px ;
+        width: 20rem;
+        height: 18rem;
+        margin: 10px;
+        border-color: $color-yellow;
+        text-transform: uppercase;
+        &__title{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            color: $color-yellow;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+            transition: all .3s;
+            -webkit-transition: all .3s;
+            -moz-transition: all .3s;
+            @include lighthover($color-yellow)
+        }
+    }
+    
+    .league-button{
+        display: block;
+        text-decoration:none;
+        color: white;
+        @include lightsaber($color-lightsaber-blue);
+          font-size:16px;
+          line-height:13px;
+          padding:0px;
+          padding-left:0px;
+          margin: 40px 10px;
+          width: 0;
+          border-radius:0px 100px 100px 0px;
+          transition:width 0.2s ease,
+          padding 0.2s ease,
+          color 0.2s ease,
+          text-shadow 0.2s ease;
+          text-transform: uppercase;
+        span{
+            display:block;
+            padding: 5px 0px 5px 10px;
+            text-decoration:none;
+            text-align: left;
+            width:150px;
+            color:inherit;
+        }
+        
+        &.add {
+            @include lightsaber($color-lightsaber-green);
+          }
+    
+        &.remove {
+            @include lightsaber($color-lightsaber-red);
+        }
+        
+        &.disabled {
+            @include lightsaber($color-lightsaber-yellow);
+        }
+    
+        &.differentSpecies {
+            @include lightsaber($color-lightsaber-purple);
+        }
+    
+        &:hover {
+            width:94%;
+            padding:0px 16px 0px 0px;
+            color:black;
+        }
+    
+    }
+
+
+    .pagination{
+        &__pages{
+            color:white;
+            display:inline-block;
+            font-size: 2.4rem;
+            padding:10px 1%;
+            @include lighthover( $color-lightsaber-blue );
+            &--active{
+                color: mix($color-lightsaber-blue,$color-white,10%);
+                outline: none;
+                text-shadow: $color-lightsaber-blue 0px 0px 6px, $color-lightsaber-blue 0px 0px 10px
+            }
+        }
+    }
+    

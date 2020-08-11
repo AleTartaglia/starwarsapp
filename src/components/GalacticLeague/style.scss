@@ -1,0 +1,119 @@
+@import '../../styles/constants.scss';
+@import '../../styles/mixins.scss';
+
+
+.start{
+    color:$color-white;
+    font-size: 5rem;
+    padding-top: 3rem;
+    @include lighthover($color-yellow);
+    &__icon{
+        margin-top: 3rem;
+        font-size: 20rem;
+    }
+}
+
+
+.group-container{
+    display:flex;
+    justify-content: center;
+    @media screen and (max-width: 700px){
+        flex-direction: column;
+        align-items: center;
+      }
+}
+
+.group-title{
+    font-size: 3rem;
+    color:white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.league-card{
+    background-color: $color-yellow;
+    height: 20rem;
+    width: 20rem;
+    margin: 2rem;
+    padding: 3rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    display: flex;
+    &__full{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        &__title{
+            flex:1;
+            text-align: center;
+            color:$color-black;
+            font-size: 3rem;
+            font-weight: 500;
+            @include transitionConfig(.2s);
+            &:hover{
+                color: $color-white;
+            }
+        }
+        &__button{
+        display: block;
+        font-size: 2rem;
+        text-decoration:none;
+        background-color: $color-black;
+        padding: 1rem;
+        border-radius: 0.8rem;
+        text-transform: uppercase;
+        color: white;
+        @include transitionConfig(.2s);
+        @include lighthover($color-lightsaber-red);
+        &:hover{
+            background-color: mix($color-lightsaber-red,#000,50%);
+        }
+        }
+    }
+    &__empty{
+        justify-content: center;
+        align-items: center;
+        position:relative;
+        @include transitionConfig(.3s);
+        .card-icon{
+            font-size: 15rem;
+            color: rgba($color-black, 0.5);
+        }
+        .plus-icon{
+            font-size: 12rem;
+            color: transparent;
+            position: absolute;
+            margin-left:0;
+        }
+        &:hover{
+            .plus-icon{
+            font-size: 12rem;
+        }
+        }
+        &--people{
+            background-color: mix($color-lightsaber-red,#000,30%);
+            &:hover{
+                @include lighthover($color-lightsaber-red)
+            }
+        }
+        &--species{
+            background-color: mix($color-lightsaber-green,#000,30%);
+            &:hover{
+                @include lighthover($color-lightsaber-green)
+            }
+        }
+        &--planets{
+            background-color: mix($color-lightsaber-purple,#000,30%);
+            &:hover{
+                @include lighthover($color-lightsaber-purple)
+            }
+        }
+        &--starships{
+            background-color: mix($color-lightsaber-blue,#000,30%);
+            &:hover{
+                @include lighthover($color-lightsaber-blue)
+            }
+        }
+    }
+}
+
